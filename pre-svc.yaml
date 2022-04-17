@@ -1,0 +1,12 @@
+apiVersion : v1
+kind : Service
+metadata : 
+  name : prereg-app-service-svc
+  labels:
+    evn: dev
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    evn: dev

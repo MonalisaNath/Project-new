@@ -1,0 +1,21 @@
+apiVersion : v1
+kind : Deployment
+metadata : 
+  name : prereg-app-service-deployment
+  labels:
+    env: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      evn: dev
+  template:
+    metadata:
+      labels:
+        env: dev
+  spec:
+    cotainers:
+    - name: app-ser-prereg
+      image: mosipid/pre-registration-application-service:latest
+      ports:
+      - containerPort: 80
